@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+<title>vc-buttonGroup - demo</title>
+<style>
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        background: rgba(119, 129, 149, 0.8);
+    }
+    .container {
+        width: 300px;
+        padding: 20px;
+    }
+    .container label {
+        font-weight: normal;
+    }
+    .container .btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    pre {
+        margin: 10px 0;
+    }
+</style>
+</head>
+<body>
+    <h1 align="center">@Vue Component - vc-buttonGroup</h1>
+    <div class="text-center">包裹组件 - 一般配合<a href="https://github.com/iwaimai-bi-fe/vc-checkbox">vc-checkbox</a>, <a href="https://github.com/iwaimai-bi-fe/vc-radio">vc-radio</a>组件做聚合</div>
+    <a style="display: block" class="text-center" href="https://github.com/iwaimai-bi-fe/vc-buttonGroup">view on Github</a>
+    <hr>
+
+    <div id="app" class="container">
+
+        <button class="btn btn-default btn-sm btn-block" @click="toggleButtonType">toggle外形类型</button>
+
+        <vc-button-group
+            :value.sync="value"
+            :buttons="buttons"
+        >
+            <vc-checkbox status="success" value="one">one</vc-checkbox>
+            <vc-checkbox status="warning" value="two">two</vc-checkbox>
+            <vc-checkbox status="danger" value="three">three</vc-checkbox>
+            <vc-checkbox status="info" value="four">four</vc-checkbox>
+        </vc-button-group>
+
+        <pre>{{ value | json 4 }}</pre>
+
+        <div class="form-group">
+            <div>buttons外形? (默认: true)</div>
+            <label><input type="radio" :value="bools.true" name="buttons" v-model="buttons">是</label>
+            <label><input type="radio" :value="bools.false" name="buttons" v-model="buttons">否</label>
+        </div>
+
+    </div>
+    <script src='../dist/example.js'></script>
+</body>
+</html>

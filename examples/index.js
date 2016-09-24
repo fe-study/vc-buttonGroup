@@ -1,6 +1,8 @@
 import Vue from 'vue'
-import vcButtonGroup from '../dist/build.js'
-import vcCheckbox from 'vc-checkbox/src/components/Checkbox'
+import vcButtonGroup from '../src'
+import vcCheckbox from '../../vc-checkbox/src'
+import vcRadio from '../../vc-radio/src'
+console.log(vcCheckbox, vcRadio)
 
 new Vue({
 	el: '#app',
@@ -10,7 +12,8 @@ new Vue({
                 'true': true,
                 'false': false
             },
-            value: null,
+            checkValue: null,
+            radioValue: null,
             buttons: true
 		}
 	},
@@ -21,6 +24,7 @@ new Vue({
     },
 	components: {
         vcButtonGroup,
-        vcCheckbox
+        vcCheckbox,
+        vcRadio
 	}
 })

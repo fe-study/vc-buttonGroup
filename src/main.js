@@ -1,3 +1,3 @@
 import vcButtonGroup from './ButtonGroup'
 
-export default vcButtonGroup
+module.exports = vcButtonGroup
